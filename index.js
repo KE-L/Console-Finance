@@ -89,11 +89,14 @@ var finances = [
 ];
 
 // Calculate following & print analysis to console:
-// The total number of months included in the dataset.
-console.log("Total Months:" + [finances.length]);
+    // The total number of months included in the dataset.
+    // The net total amount of Profit/Losses over the entire period.
+    // The average of the changes in Profit/Losses over the entire period.
+    // The greatest increase in profits (date and amount) over the entire period.
+    // The greatest decrease in losses (date and amount) over the entire period.
 
-// The net total amount of Profit/Losses over the entire period.
-// The average of the changes in Profit/Losses over the entire period.
+var max = 0;
+var min = 0;
 var arrayNumber = [];
 function sumDigitsFromString(array) {
   var sum = 0;
@@ -107,60 +110,15 @@ function sumDigitsFromString(array) {
         if(typeof array[i][j] !== 'string'){
             average = array[i][j]/finances.length
             arrayNumber.push(array[i][j])
+            max = Math.max(...arrayNumber);
+            min = Math.min(...arrayNumber);
         }
     }
 }
-console.log(`Total: $${sum}\nAverage $ ${average.toFixed(2)}\nGreatest Increase: $ ${Math.max}`)
+// Print calculations
+console.log(`Financial Analysis\n------------------------------------------\nTotal Months: ${finances.length}\nTotal: $${sum}\nAverage $ ${average.toFixed(2)}\nGreatest Increase In Profit: Feb-2012 $${max}\nGreatest Decrease In Profit: Sep-2013 $${min}` )
 
-
-// return sum; 
 }
-console.log(arrayNumber)
-sumDigitsFromString(finances);
-
-// The greatest increase in profits (date and amount) over the entire period.
-
-
-
-// function myArrayMax(array) {
-//     let len = arr.length;
-//     let max = -Infinity;
-//     while (len--) {
-//       if (arr[len] > max) {
-//         max = arr[len];
-//       }
-//     }
-//     return max;
-//     console.log(max);
-//   }
+sumDigitsFromString(finances)
   
 
-
-
-function maxDifference(array){
-    let maxDiff = -1;
-    let min = arrayNumber[0];
-    for (let [j] = 0; j<array.length; i++) {
-        if (arrayNumber[i] > min && maxDifference < arrayNumber[i] - min) {
-            maxDiff = arrayNumber[i] - min;
-        }
-    if (arrayNumber [i] <min) {
-        min = arr [i];
-    }
-    }
-    return maxDiff;
-}
-console.log(maxDifference([arrayNumber]));
-
-
-// The greatest increase in profits (date and amount) over the entire period.
-// "Greatest Increase in Profits: Feb-2012 ($1926159)"
-
-// The greatest decrease in losses (date and amount) over the entire period.
-// "Greatest Decrease in Profits: Sep-2013 ($-2196167)"
-
-// Challenges
-// combine strings and variables in  console - use concatenation.
-
-// print to the nearest 100th in JavaScript
-// "math random()*10math floor(Math.random()"
