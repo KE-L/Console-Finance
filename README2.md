@@ -88,70 +88,54 @@ var finances = [
   ["Feb-2017", 671099],
 ];
 
-// Calculate following & print analysis to console:
+// var dataset = [`losses`] ;
+// var dataset = [`profit`];
+// change var to losses?
+// Calculate each of the following:
+
 // The total number of months included in the dataset.
+
 console.log("Total Months:" + [finances.length]);
 
 // The net total amount of Profit/Losses over the entire period.
 // The average of the changes in Profit/Losses over the entire period.
-var arrayNumber = [];
+
 function sumDigitsFromString(array) {
   var sum = 0;
-  var average = 0;
+
   for (let i = 0; i < array.length; i++) {
 
     sum+=array[i][1]
-    for (let j = 0; j < array[i].length; j++){
-        // console.log(array[i][j])
-        // console.log(typeof array[i][j])
-        if(typeof array[i][j] !== 'string'){
-            average = array[i][j]/finances.length
-            arrayNumber.push(array[i][j])
-        }
-    }
+
 }
-console.log(`Total: $${sum}\nAverage $ ${average.toFixed(2)}\nGreatest Increase: $ ${Math.max}`)
-
-
+console.log(`$${sum}
+    \nAverage $${Math.floor(sum / finances.length)}
+    \n{Math.max([finances])}`)
+console.log(`$${Math.max}`)
 // return sum; 
 }
-console.log(arrayNumber)
 sumDigitsFromString(finances);
 
-// The greatest increase in profits (date and amount) over the entire period.
+// function averageDigitsFromString(array) {
+//     var sum = 0;
 
-
-
-// function myArrayMax(array) {
-//     let len = arr.length;
-//     let max = -Infinity;
-//     while (len--) {
-//       if (arr[len] > max) {
-//         max = arr[len];
-//       }
-//     }
-//     return max;
-//     console.log(max);
+//     for (let i = 0; i < array.length; i++) {
+//       // console.log(array[i][1]);
+//       // console.log(typeof array[i]);
+//       average+=array[i][1]
+//          //     if (typeof(arr [i]) === "number")
+//       // {
+//       // sum.push (num[i] + sum)
+//       // }
 //   }
-  
+//   console.log("$"+ average)
+//   return average;
+//   }
+//   averageDigitsFromString(finances);
 
-
-
-function maxDifference(array){
-    let maxDiff = -1;
-    let min = arrayNumber[0];
-    for (let [j] = 0; j<array.length; i++) {
-        if (arrayNumber[i] > min && maxDifference < arrayNumber[i] - min) {
-            maxDiff = arrayNumber[i] - min;
-        }
-    if (arrayNumber [i] <min) {
-        min = arr [i];
-    }
-    }
-    return maxDiff;
-}
-console.log(maxDifference([arrayNumber]));
-
+// track what the total change in profits is from month to month and then the average.
+// "Total/Number of months"
+// console.log(Total/Number of months)
 
 // The greatest increase in profits (date and amount) over the entire period.
 // "Greatest Increase in Profits: Feb-2012 ($1926159)"
